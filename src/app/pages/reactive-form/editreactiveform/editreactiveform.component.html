@@ -1,0 +1,59 @@
+<form [formGroup]="contactForm" (ngSubmit)="onsubmit()">
+    <section class="container">
+        <!-- <div class="head">
+        <h1 class="heading">Registration Form 1</h1>
+        <p class="para">Use Essential Addons and create registration form to let your userregister on your website.</p>
+    </div> -->
+    <div class="sub_container">
+       <!-- <div class="section1">
+       
+       </div> -->
+       <div class="section2">
+        <h2>REACTIVE FORM</h2>
+       <div class="flex">
+        <div class="input">
+            <input type="text"  placeholder=" " class="placeholder_field" formControlName="firstName">
+            <label class="did-floating-label">First Name</label>
+            <span class="text-danger ft_size_12px" *ngIf="!contactForm.get('firstName').valid && (submitted || contactForm.get('firstName').touched || contactForm.get('firstName').dirty )">Please enter your first name</span>
+        </div> 
+       <div class="input">
+        <input type="text"  placeholder=" " class="placeholder_field" formControlName="lastName">
+        <label class="did-floating-label">Last Name</label>
+        <span class="text-danger ft_size_12px" *ngIf="!contactForm.get('lastName').valid && (submitted || contactForm.get('lastName').touched || contactForm.get('lastName').dirty )">Please enter your last name</span>
+
+        </div>
+    </div>
+       <div class="input">
+        <input type="email"  placeholder=" " class="placeholder_field" formControlName="email">
+        <label class="did-floating-label">email</label>
+        <span class="text-danger ft_size_12px" *ngIf="!contactForm.get('email').valid && (submitted || contactForm.get('email').touched || contactForm.get('email').dirty )">Please enter your valid email</span>
+
+      </div>
+        <div class="input">
+            <input type="text"  placeholder=" " class="placeholder_field" formControlName="phone">
+            <label class="did-floating-label">phone</label>
+            <span class="text-danger ft_size_12px" *ngIf="!contactForm.get('phone').valid && (submitted || contactForm.get('phone').touched || contactForm.get('phone').dirty )">Please enter your phone number</span>
+
+        </div>
+
+        <div class="input">
+            <input type="text"  placeholder=" " class="placeholder_field" formControlName="address">
+            <label class="did-floating-label">address</label>
+            <span class="text-danger ft_size_12px" *ngIf="!contactForm.get('address').valid && (submitted || contactForm.get('address').touched || contactForm.get('address').dirty )">Please enter your address</span>
+
+        </div>
+      
+       
+       <div class="input button_center" >
+        <button type="submit" class="button">submit</button>
+       </div> 
+      
+       
+       </div>  
+    </div>
+</section>
+</form>
+
+    
+
+

@@ -1,0 +1,107 @@
+
+<p class="text-center">{{userName}}-{{email}} 
+<button (click)="logout()">logout</button>
+
+<form [formGroup]="contactForm" (ngSubmit)="onsubmit()">
+    <section class="container">
+        <!-- <div class="head">
+        <h1 class="heading">Registration Form 1</h1>
+        <p class="para">Use Essential Addons and create registration form to let your userregister on your website.</p>
+    </div> -->
+    <div class="sub_container">
+       <!-- <div class="section1">
+       
+       </div> -->
+       <div class="section2">
+        <h2>REACTIVE FORM</h2>
+       <div class="flex">
+        <div class="input">
+            <input type="text"  placeholder=" " class="placeholder_field" formControlName="firstName">
+            <label class="did-floating-label">First Name</label>
+            <span class="text-danger ft_size_12px" *ngIf="!contactForm.get('firstName').valid && (submitted || contactForm.get('firstName').touched || contactForm.get('firstName').dirty )">Please enter your first name</span>
+        </div> 
+       <div class="input">
+        <input type="text"  placeholder=" " class="placeholder_field" formControlName="lastName">
+        <label class="did-floating-label">Last Name</label>
+        <span class="text-danger ft_size_12px" *ngIf="!contactForm.get('lastName').valid && (submitted || contactForm.get('firstName').touched || contactForm.get('firstName').dirty )">Please enter your last name</span>
+        </div>
+    </div>
+       <div class="input">
+        <input type="email"  placeholder=" " class="placeholder_field" formControlName="email">
+        <label class="did-floating-label">email</label>
+        <span class="text-danger ft_size_12px" *ngIf="!contactForm.get('email').valid && (submitted || contactForm.get('firstName').touched || contactForm.get('firstName').dirty )">Please enter your valid email</span>
+      </div>
+        <div class="input">
+            <input type="text"  placeholder=" " class="placeholder_field" formControlName="phone">
+            <label class="did-floating-label">phone</label>
+            <span class="text-danger ft_size_12px" *ngIf="!contactForm.get('phone').valid && (submitted || contactForm.get('firstName').touched || contactForm.get('firstName').dirty )">Please enter your phone number</span>
+        </div>
+
+        <div class="input">
+            <input type="text"  placeholder=" " class="placeholder_field" formControlName="address">
+            <label class="did-floating-label">Address</label>
+            <span class="text-danger ft_size_12px" *ngIf="!contactForm.get('address').valid && (submitted || contactForm.get('address').touched || contactForm.get('address').dirty )">Please enter your address</span>
+        </div>
+
+        <!-- <div class="input">
+            <input type="file" formControlName="image" (change)="onFileSelect($event)"/>
+            <span class="text-danger ft_size_12px" *ngIf="!contactForm.get('image').valid && (submitted || contactForm.get('image').touched || contactForm.get('image').dirty )">please upload image</span>
+           
+          </div> -->
+
+        
+      
+       
+       <div class="input button_center" >
+        <button type="submit" class="button">submit</button>
+       </div> 
+      
+       
+       </div>  
+    </div>
+</section>
+</form>
+<div class="text-center">
+<table class="styled-table">
+    <thead>
+        <tr>
+        <th>firstName</th>
+        <th>lastname</th>
+        <th>email</th>
+        <th>phone</th>
+        <th>address</th>
+        <th>action</th>
+    </tr>
+</thead>
+<tbody  *ngIf="formlistdata !=''" >
+
+   <tr *ngFor="let post of formlistdata" >
+        <td>{{post.First_name}}</td>
+        <td>{{post.Last_Name}}</td>
+        <td>{{post.email}}</td>
+        <td>{{post.phone}}</td>
+        <td>{{post.address}}</td>
+        
+        <td>
+            <!-- <button class="" (click)="editUser(post.id,post.First_name,post.Last_Name,post.email,post.phone,'edit')">Edit</button> -->
+            <a routerLink="editreactiveform" [queryParams]="{Id: post.id}">
+                Edit
+            </a>
+            <button class="" (click)="deleteUser(post.id)">Delete</button>
+           
+        </td>
+        
+    </tr>
+</tbody>
+
+<tbody  *ngIf="formlistdata ==''" >
+    <tr>
+         <td colspan="4" align="center">No Data</td>
+        
+     </tr>
+ </tbody>
+</table>
+    
+
+</div>
+    

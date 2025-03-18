@@ -1,0 +1,46 @@
+
+<form [formGroup]="contactForm" (ngSubmit)="onsubmit()">
+    <section class="container">
+        <div class="head">
+        <h1 class="heading">Registration Form 1</h1>
+        <p class="para">Use Essential Addons and create registration form to let your userregister on your website.</p>
+    </div>
+    <div class="sub_container">
+       <div class="section1">
+       
+       </div>
+       <div class="section2">
+        <h2>Create an account</h2>
+       
+        <div class="input">
+            <input type="text" formControlName="firstName" placeholder="" class="placeholder_field">
+            <label class="did-floating-label">First Name</label>
+            <span class="text-danger ft_size_12px" *ngIf="!contactForm.get('firstName').valid && (submitted || contactForm.get('firstName').touched || contactForm.get('firstName').dirty )">Please enter your first name</span>
+        </div> 
+       <div class="input"><input type="text" formControlName="lastName" placeholder="" class="placeholder_field">
+        <label class="did-floating-label">Last Name</label></div>
+        <span class="text-danger ft_size_12px" *ngIf="!contactForm.get('lastName').valid && (submitted || contactForm.get('lastName').touched || contactForm.get('lastName').dirty )">Please enter your last name</span>
+       <div class="input"><input type="text" formControlName="email" placeholder="" class="placeholder_field">
+        <label class="did-floating-label">email</label>
+        <span class="text-danger ft_size_12px" *ngIf="!contactForm.get('email').valid && (submitted || contactForm.get('email').touched || contactForm.get('email').dirty )">Please enter your email</span>
+      </div>
+        <div class="input"><input type="text" formControlName="Password" placeholder="" class="placeholder_field">
+            <label class="did-floating-label">Password</label>
+            <span class="text-danger ft_size_12px" *ngIf="!contactForm.get('Password').valid && (submitted || contactForm.get('Password').touched || contactForm.get('Password').dirty )">Please enter your passsword</span>
+        </div>
+       <diV class="input"><input type="text" formControlName="ConformPassword" placeholder="" class="placeholder_field">
+        <label class="did-floating-label">Conform Password</label>
+        <span class="text-danger ft_size_12px" *ngIf="!contactForm.get('ConformPassword').valid && (submitted || contactForm.get('ConformPassword').touched || contactForm.get('ConformPassword').dirty )">Please enter your ConformPassword</span>
+       </diV>
+       <div class="input"><label class="switch"><input type="checkbox"><span class="slider"></span></label>  
+        <span class="fond">Accept<span class="text1"> the terms and conditions.</span></span></div>
+       <div class="input">
+        <button type="submit" class="button">Create Account</button>
+       </div> 
+       <div class="input text1"> Already have an account? <a routerLink="/login">Sign In</a></div>
+       
+       </div>  
+    </div>
+    </section>
+    </form>
+

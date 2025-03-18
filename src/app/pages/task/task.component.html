@@ -1,0 +1,10 @@
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+    <label for="name">Name:</label>
+    <input id="name" formControlName="name" type="text" />
+  
+    <label for="image">Image:</label>
+    <input type="file" (change)="onFileChange($event)" />
+  
+    <button type="submit" [disabled]="contactForm.invalid">Submit</button>
+  </form>
+  

@@ -1,0 +1,36 @@
+
+<form [formGroup]="contactForm" (ngSubmit)="onsubmit()">
+    <section class="container">
+    <div class="head">
+        <h1 class="heading">Login</h1>
+        
+    </div>
+    <div class="sub_container">
+       <div class="section1">
+        
+       </div>
+       <div class="section2">
+        <h2>LOGIN</h2>
+       
+         
+       
+       <div class="input"><input type="text" formControlName="email" placeholder="" class="placeholder_field">
+        <label class="did-floating-label">email</label>
+        <span class="text-danger ft_size_12px" *ngIf="!contactForm.get('email').valid && (submitted || contactForm.get('email').touched || contactForm.get('email').dirty )">Please enter your email</span>
+      </div>
+        <div class="input"><input type="text" formControlName="Password" placeholder="" class="placeholder_field">
+            <label class="did-floating-label">Password</label>
+            <span class="text-danger ft_size_12px" *ngIf="!contactForm.get('Password').valid && (submitted || contactForm.get('Password').touched || contactForm.get('Password').dirty )">Please enter your passsword</span>
+        </div>
+       
+       
+       <div class="input">
+        <button type="submit"class="button">LOGIN</button>
+       </div> 
+       <div class="input text1"><a routerLink="/forgetpassword">forget password</a></div>
+       
+       
+       </div>  
+    </div>
+    </section>
+</form>
