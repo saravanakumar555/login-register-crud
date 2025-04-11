@@ -39,7 +39,7 @@ export class ReactiveFormComponent {
       'email' : new FormControl(null,[Validators.required,Validators.email]),
       'phone' : new FormControl(null,Validators.required),
       'address' : new FormControl(null,Validators.required),
-      // 'image' : new FormControl(null,Validators.required),
+      'gender' : new FormControl(null,Validators.required),
     })
 
      this.getReactiveformdata()
@@ -65,14 +65,6 @@ export class ReactiveFormComponent {
      }
     });
   }
-
-  // onFileSelect(event:any){
- 
-  //   const file = event.target.files;
-  //   console.log('file:',file)
-  // }
-
- 
 
   onsubmit(){
     this.submitted=false;
