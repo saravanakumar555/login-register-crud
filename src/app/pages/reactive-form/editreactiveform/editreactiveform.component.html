@@ -42,7 +42,14 @@
             <span class="text-danger ft_size_12px" *ngIf="!contactForm.get('address').valid && (submitted || contactForm.get('address').touched || contactForm.get('address').dirty )">Please enter your address</span>
 
         </div>
-      
+
+        <div class="input">Gender:
+        <select formControlName="gender">
+          <option value="male">male</option>
+          <option value="female">female</option>
+        </select>
+        <span class="text-danger ft_size_12px" *ngIf="!contactForm.get('gender').valid && (submitted || contactForm.get('gender').touched || contactForm.get('gender').dirty )">please select gender</span>
+        </div>
        
        <div class="input button_center" >
         <button type="submit" class="button">submit</button>
