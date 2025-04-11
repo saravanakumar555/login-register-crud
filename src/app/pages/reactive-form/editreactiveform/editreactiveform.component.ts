@@ -27,7 +27,8 @@ this.contactForm = new FormGroup({
   'lastName' : new FormControl(null,Validators.required),
   'email' : new FormControl(null,[Validators.required,Validators.email]),
   'phone' : new FormControl(null,Validators.required),
-  'address' : new FormControl(null,Validators.required)
+  'address' : new FormControl(null,Validators.required),
+  'gender' : new FormControl(null,Validators.required)
 })
 this.getuserdetails();
   }
@@ -44,7 +45,8 @@ this.getuserdetails();
           'lastName': pres.data.Last_Name,
            'email': pres.data.email,
            'phone' : pres.data.phone,
-           'address' : pres.data.address
+           'address' : pres.data.address,
+          'gender' : pres.data.Gender
           
         })
 
