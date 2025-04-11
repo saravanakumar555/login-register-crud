@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { ToastrService } from 'ngx-toastr';
 import { RegistrationformService } from 'src/app/services/registrationform.service';
@@ -14,7 +14,7 @@ export class LoginComponent {
   contactForm:any=FormGroup;
   submitted = false;
   // loginformServices: any;
-  constructor(private route:ActivatedRoute,private loginformServices:RegistrationformService,private toastr:ToastrService){}
+ constructor(private route:ActivatedRoute,private router:Router,private loginformServices:RegistrationformService,private toastr:ToastrService){}
   ngOnInit():void{
     this.contactForm = new FormGroup({
       
@@ -33,7 +33,7 @@ export class LoginComponent {
  .subscribe( {
   next: (pres) => {
    this.toastr.success('customer login sucess');
-   location.replace("/task")
+  this.router.navigate(['/reactiveform'])
   
 
 
